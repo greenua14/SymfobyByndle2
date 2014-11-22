@@ -1,0 +1,19 @@
+{% extends 'HomeWorkBundle::layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% block sub %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block menu %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% if app.debug %}
+        <p>Test request method: {{ app.request.method }}</p>
+        <p>Test application Environment: {{ app.environment }}</p>
+    {% endif %}
+
+{% endblock %}

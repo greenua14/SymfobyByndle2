@@ -1,0 +1,28 @@
+{% extends 'HomeWorkBundle::layout.html.twig' %}
+{#{% extends '::base.html.twig' %}#}
+
+{% block title %}News{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    {% block sub %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block menu %}
+        {{ parent() }}
+    {% endblock %}
+
+    {% block main_container %}
+        {{ parent() }}
+
+        <hr />
+
+        {% for new in news %}
+            Title: {{ new.title }} <hr />
+        {% endfor %}
+
+    {% endblock %}
+
+{% endblock %}

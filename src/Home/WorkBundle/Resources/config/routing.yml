@@ -1,0 +1,7 @@
+_home_index:
+    path:       /
+    defaults:   { _controller: HomeWorkBundle:Index:index }
+
+_test_twig:
+    path:       /twig
+    defaults:   { _controller: HomeWorkBundle:Index:twig }
