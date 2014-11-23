@@ -41,4 +41,12 @@ class IndexController extends Controller
             'string' => $str
         ));
     }
+
+    public function twig2Action()
+    {
+        return $this->render('HomeWorkBundle:Index:twig2.html.twig', array(
+            'text' => 'Some text for tests',
+            'number' => -123
+        ));
+    }
 }

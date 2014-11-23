@@ -1,5 +1,7 @@
 {% extends 'HomeWorkBundle::layout.html.twig' %}
 
+{% block title %}Twig{% endblock %}
+
 {% block body %}
     {{ parent() }}
 
@@ -11,9 +13,58 @@
         {{ parent() }}
     {% endblock %}
 
+    {% set text = "This is text" %}
+
+    <h1>Using TWIG Reference</h1>
+
+    <h2>if</h2>
+
+    {% if bool  %}
+        <h3>Variable bool is: {{ bool }} (true)</h3>
+    {% else %}
+        <h3>Variable bool is: {{ bool }} (false)</h3>
+    {% endif %}
+
+    <hr />
+
+    {% if count > 25 %}
+        <h4>Count > {{ count }}</h4>
+    {% else %}
+        <h4>Count:  {{ count }}</h4>
+    {% endif %}
+
     {% if app.debug %}
         <p>Test request method: {{ app.request.method }}</p>
         <p>Test application Environment: {{ app.environment }}</p>
     {% endif %}
+
+    <h2>for</h2>
+
+    {% for letter in 'a'..'z' %}
+        {{ letter|lower }}
+    {% endfor %}
+    *
+    {% for letter in 'a'..'z' %}
+        {{ letter|upper }}
+    {% endfor %}
+
+    <hr />
+
+    {% for i in 0..count %}
+        Count: {{ i }} <br />
+    {% endfor %}
+
+    <hr />
+
+    <h2>filter</h2>
+
+    {% filter upper %}
+        {{ string }} - {{ text }}
+    {% endfilter %}
+    <br />
+
+    {% filter lower|escape %}
+        {{ string }}
+    {% endfilter %}
 
 {% endblock %}
