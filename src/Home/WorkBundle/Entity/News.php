@@ -31,9 +31,9 @@ class News
     /**
      * @var string
      *
-     * @ORM\Column(name="text", type="text")
+     * @ORM\Column(name="content", type="text")
      */
-    private $text;
+    private $content;
 
     /**
      * @var string
@@ -151,4 +151,5 @@ class News
     {
         return $this->createDate;
     }
+
 }
