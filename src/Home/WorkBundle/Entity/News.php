@@ -31,9 +31,9 @@ class News
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="text", type="text")
      */
-    private $content;
+    private $text;
 
     /**
      * @var string
