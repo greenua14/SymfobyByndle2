@@ -4,14 +4,10 @@
 
 {% block body %}
     {{ parent() }}
-
     {% block main_container %}
         {{ parent() }}
-
         {% for new in news %}
             Title: {{ new.title }} <hr />
         {% endfor %}
-
     {% endblock %}
-
 {% endblock %}
