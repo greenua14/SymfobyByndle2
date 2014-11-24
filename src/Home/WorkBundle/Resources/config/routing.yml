@@ -4,8 +4,8 @@ _home_index:
 
 _test_twig:
     path:       /twig
-    defaults:   { _controller: HomeWorkBundle:Index:twig }
+    defaults:   { _controller: HomeWorkBundle:Index:testTwig }
 
 _test_twig2:
     path:       /twig2
-    defaults:   { _controller: HomeWorkBundle:Index:twig2 }
+    defaults:   { _controller: HomeWorkBundle:Index:testTwig2 }

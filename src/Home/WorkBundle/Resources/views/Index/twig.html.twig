@@ -5,14 +5,6 @@
 {% block body %}
     {{ parent() }}
 
-    {% block sub %}
-        {{ parent() }}
-    {% endblock %}
-
-    {% block menu %}
-        {{ parent() }}
-    {% endblock %}
-
     {% set text = "This is text" %}
 
     <h1>Using TWIG Reference</h1>
@@ -24,9 +16,7 @@
     {% else %}
         <h3>Variable bool is: {{ bool }} (false)</h3>
     {% endif %}
-
     <hr />
-
     {% if count > 25 %}
         <h4>Count > {{ count }}</h4>
     {% else %}

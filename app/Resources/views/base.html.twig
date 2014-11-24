@@ -4,9 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <!-- Latest compiled and minified CSS -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-            <!-- Optional theme -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
             <link rel="stylesheet" href="{{ asset('bundles/homework/css/style.css') }}">
         {% endblock %}
@@ -14,9 +12,9 @@
     </head>
     <body>
         {% block body %}
-            {% block sub %}
+            {% block header %}
                 <div class="sub_block"></div>
-            {% endblock %}
+            {% endblock header %}
 
             {% block menu %}
                 <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
@@ -32,26 +30,25 @@
                         </div>
                         <div id="navbar" class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                {#<li class="active"><a href="#">Home</a></li>#}
                                 <li><a href="{{ path('_test_twig') }}">Test TWIG</a></li>
                                 <li><a href="{{ path('_test_twig2') }}">Test TWIG2</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-            {% endblock %}
+            {% endblock menu %}
 
             {% block main_container %}
                 <div class="container">
                     Container in base
                 </div>
-            {% endblock %}
+            {% endblock main_container %}
 
-        {% endblock %}
+        {% endblock body %}
 
         {% block javascripts %}
-            <!-- Latest compiled and minified JavaScript -->
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-        {% endblock %}
+        {% endblock javascripts %}
+
     </body>
 </html>

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * News
  *
- * @ORM\Table()
+ * @ORM\Table(name="News")
  * @ORM\Entity
  */
 class News

@@ -5,24 +5,11 @@
 {% block body %}
     {{ parent() }}
 
-    {% block sub %}
-        {{ parent() }}
-    {% endblock %}
-
-    {% block menu %}
-        {{ parent() }}
-    {% endblock %}
-
     {{ 'my the best title'|title }}
     <br /><hr />
 
     {% autoescape %}
         {{ text }}
-    {% endautoescape %}
-    <br />
-
-    {% autoescape true %}
-    {{ text }}
     {% endautoescape %}
     <br />
 
