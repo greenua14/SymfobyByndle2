@@ -1,0 +1,75 @@
+{% extends 'HomeWorkBundle::layout.html.twig' %}
+
+{% block title %}Twig2{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+
+    {{ 'my the best title'|title }}
+    <br /><hr />
+
+    {% autoescape %}
+        {{ text }}
+    {% endautoescape %}
+    <br />
+
+    {% autoescape false %}
+    {{ text }}
+    {% endautoescape %}
+    <br />
+
+    {% autoescape true js %}
+    {{ text }}
+    {% endautoescape %}
+    <br />
+
+    {% autoescape 'html' %}
+    {{ text }}
+    {% endautoescape %}
+    <br />
+
+    {% autoescape 'js' %}
+    {{ text }}
+    {% endautoescape %}
+    <br />
+    <hr />
+
+    <h2>flush</h2>
+
+    {% flush %}
+
+    {#{% include 'sub.html.twig' %}#}
+
+    {% spaceless %}
+        <div>
+            <strong>Test dsgdgsdg</strong>
+        </div>
+    {% endspaceless %}
+
+    <h2>Number |abs</h2>
+    {{ number|abs }}
+    <br />
+    {{ text|capitalize }}
+
+    <br />
+    Now is: {{ "now"|date("m/d/Y") }}
+
+    <h2>Join</h2>
+
+    {{ [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]|join }}
+    <br />
+    {{ [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]|join('][') }}
+
+    <h2>Json_encode</h2>
+    {{ text|json_encode }}
+
+    <br />
+    {{ "I like Twig.\nYou will like it too."|nl2br }}
+
+    <pre>
+        {{ dump(text) }}
+    </pre>
+
+    <h3>Random</h3>
+    {{ random(['first', 'second', 'third', 'four', 'five']) }}
+{% endblock %}
